@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- iOS web app settings -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="theme-color" content="#0d1117">
+	 <meta name="apple-mobile-web-app-title" content="Worshify">
+	<link rel="apple-touch-icon" href="images/Screenshot 2025-10-17 7.01.46 PM.png">
+	<link rel="apple-touch-startup-image" href="images/Screenshot 2025-10-17 7.01.46 PM.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- html settings-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Worshify</title>
+  <link rel="stylesheet" href="style.css" />
+
+    <!--import Montserrat font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<link id="favicon" rel="icon" type="image/x-icon" href="images/Screenshot 2025-10-17 7.01.46 PM.png">
+
+<body>
+  
+  <div class="screen-viewport">
+    <div class="screen-track">
+
+    
+
+
+    <div class="screen music-container">
+
+      <input 
+        type="text" 
+        id="search-bar" 
+        placeholder="Search songs..." 
+        autocomplete="off">
+        <ul id="playlist">
+        <!-- Songs will be added here dynamically-->  
+         <!-- we'll never know the truth of mashle-->
+      </ul>
+    </div>
+
+<div class="screen playlists-screen" id="libraryScreen">
+
+  <div class = "songRequestScreen" id="songRequest">
+    <button class="closeRequest" id="closeRequest">
+    ▼
+  </button>
+
+      <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfFAmJ36AErLUV0SLYX8BSZOm4j00yqk2k9Z661v-amwD2vsA/viewform?usp=dialogembedded=true"
+      width="100%"
+      height="100%"
+      frameborder="0">
+  </iframe>
+</div>
+
+  <div class = "topBarScreen" id = "topBar">
+    <h1 class="screen-title">     Your Library</h1>
+    
+    <button class = "options" id = "optionsbtn">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm0-6a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm0 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" fill="#ffffff"></path></g></svg>
+    </button>
+
+    <div class="optionsMenu" id="optionsMenu">
+  <button class="optionItem" id="requestSongOption"></button>
+</div> 
+  </div>
+
+  <div class="library-grid">
+    <button class="library-btn" data-library="LikedSongs">
+      <img src="images/Liked.png">
+      <span>Liked Songs</span>
+    </button>
+
+    <button class="library-btn" data-library="LockIn">
+      <img src="images/lockIN.png">
+      <span>Lock IN</span>
+    </button>
+
+    <button class="library-btn" data-library="MUSIKO">
+      <img src="images/MUSIKO.png">
+      <span>MUSIKO</span>
+    </button>
+
+    <button class="library-btn" data-library="Voceros">
+      <img src="images/voceros.png">
+      <span>VOCEROS</span>
+    </button>
+
+    <button class="library-btn" data-library="SerendipiaRemix">
+      <img src="images/Cover of Serendipia - Remix by Orane GOAT.jpg">
+      <span>Serendipia - Remix</span>
+    </button>
+
+    <button class="library-btn" data-library="majoYDan">
+      <img src="images/majoyDan.png">
+      <span>Majo y Dan</span>
+    </button>
+
+    <button class="library-btn" data-library="Worship">
+      <img src="images/worship.png">
+      <span>Worship</span>
+    </button>
+
+	  <button class="library-btn" data-library="cumpleaños">
+      <img src="images/Screenshot 2026-05-16 1.13.00 PM.png">
+      <span>cumpleaños</span>
+    </button>
+
+    <button class="library-btn" data-library="ROADTRIP">
+      <img src="images/ROADTRIP.png">
+      <span>ROADTRIP</span>
+    </button>
+  </div>
+</div>
+
+<div class="screen library-playlist-screen" id="libraryPlaylistScreen">
+
+  <!-- ARTIST BANNER -->
+  <div class="artist-banner" id="artistBanner">
+
+    <img id="artistBannerImage" src="" alt="Artist Banner">
+
+    <div class="artist-banner-overlay"></div>
+
+    <div class="artist-banner-content">
+
+      <img id="artistProfilePicture" src="" alt="Artist">
+
+      <div class="artist-banner-text">
+        <span id="artistPageLabel">ARTIST</span>
+        <h1 id="artistPageName"></h1>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- REGULAR PLAYLIST HEADER -->
+  <div class="library-playlist-header" id="libraryPlaylistHeader">
+
+    <img id="libraryPlaylistCover" class="library-playlist-cover" src="" alt="Playlist Cover">
+
+    <h1 id="libraryTitle"></h1>
+
+  </div>
+
+
+  <!-- PLAYBACK CONTROLS -->
+  <div class="library-page-actions">
+
+    <button id="libraryBigPlay" class="library-big-btn">
+      <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.154 0C2.964 0 2 .951 2 2.125v13.75c0 .784.437 1.504 1.138 1.874.7.37 1.55.329 2.211-.106l9.693-6.875A2.117 2.117 0 0016 9c0-.71-.36-1.374-.96-1.768L5.349.357A2.172 2.172 0 004.154 0z"/>
+      </svg>
+    </button>
+
+    <button id="libraryBigShuffle" class="library-big-btn-wow">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 15L21 18M21 18L18 21M21 18H18.5689C17.6297 18 17.1601 18 16.7338 17.8705C16.3564 17.7559 16.0054 17.5681 15.7007 17.3176C15.3565 17.0348 15.096 16.644 14.575 15.8626L14.3333 15.5M18 3L21 6M21 6L18 9M21 6H18.5689C17.6297 6 17.1601 6 16.7338 6.12945C16.3564 6.24406 16.0054 6.43194 15.7007 6.68236C15.3565 6.96523 15.096 7.35597 14.575 8.13744L9.42496 15.8626C8.90398 16.644 8.64349 17.0348 8.29933 17.3176C7.99464 17.5681 7.64357 17.7559 7.2662 17.8705C6.83994 18 6.37033 18 5.43112 18H3M3 6H5.43112C6.37033 6 6.83994 6 7.2662 6.12945C7.64357 6.24406 7.99464 6.43194 8.29933 6.68236C8.64349 6.96523 8.90398 7.35597 9.42496 8.13744L9.66667 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+  </div>
+
+
+  <!-- SONG LIST -->
+  <h2 class="library-songs-heading">Songs</h2>
+
+  <div class="library-songs-container">
+  <ul id="libraryPlaylist">
+    <!-- Library songs inserted by JavaScript -->
+  </ul>
+
+  <div class="library-bottom-spacer"></div>
+  </div>
+
+</div>
+
+</div>
+
+  <div class="bottom-nav">
+    <button id="open-playlist" class="mini-player">
+    <img id="mini-cover" src="" alt="cover" />
+
+    <div class="mini-text">
+      <span id="mini-title">Song Title</span>
+      <span id="mini-artist">Artist</span>
+    </div>
+
+    <div class="mini-controls">
+      <!-- Play -->
+      <svg id="mini-play" viewBox="0 0 24 24" aria-hidden="true"> 
+        <path d="M8 5v14l11-7z"></path> 
+      </svg>
+
+    <!-- Pause -->
+    <svg id="mini-pause" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 5h4v14H6zm8 0h4v14h-4z"></path>
+    </svg>
+  </div>
+  </button>
+
+  <div class ="bottom-bar">
+    <input type="range" id="bottom-seek-bar" value="0"> 
+  </div>
+
+<div class="nav-buttons">
+  <button id="nav-all" class="nav-btn">
+    <svg viewBox="0 0 1024.00 1024.00" xmlns="http://www.w3.org/2000/svg" stroke-width="101.376"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 128 128 447.936V896h255.936V640H640v256h255.936V447.936z"></path></g></svg>
+    <span>Home</span>
+  </button>
+
+  <button id="nav-library" class="nav-btn">
+    <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 30 30" version="1.1" id="svg822" inkscape:version="0.92.4 (f8dce91, 2019-08-02)" sodipodi:docname="library.svg" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs id="defs816"></defs> <sodipodi:namedview id="base" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="17.833333" inkscape:cx="15" inkscape:cy="15" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="true" units="px" inkscape:window-width="1366" inkscape:window-height="713" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" showguides="false"> <inkscape:grid type="xygrid" id="grid816"></inkscape:grid> </sodipodi:namedview> <metadata id="metadata819"> <rdf:rdf> <cc:work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> <dc:title> </dc:title> </cc:work> </rdf:rdf> </metadata> <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-289.0625)"> <rect style="opacity:1;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.71555553" id="rect992" width="4" height="24" x="3" y="292.0625" rx="2" ry="1.9999999"></rect> <rect ry="1.9999999" rx="2" y="292.0625" x="9" height="24" width="4" id="rect994" style="opacity:1;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.71555553"></rect> <rect style="opacity:1;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.71555553" id="rect996" width="4" height="24" x="-86.261955" y="280.90771" rx="2" ry="1.9999999" transform="rotate(-20)"></rect> </g> </g></svg>
+    <span>Your Library</span>
+  </button>
+
+  <button id="nav-playlist" class="nav-btn">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11182)"> <path d="M6 6L3 7.73205L3 4.26795L6 6Z" stroke-width="2.5" stroke-linejoin="round"></path> <path d="M3 12L21 12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M10 6L21 6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M3 18L21 18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11182"> <rect width="24" height="24"></rect> </clipPath> </defs> </g></svg>
+    <span>Playlist</span>
+  </button>
+  </div>
+</div>
+
+</div>
+
+<!-- PLAYLIST SHEET -->
+<div id="playlist-sheet">
+  <button id="toggle-playlist" class="toggle-playlist-btn"> <!-- menu hide button-->
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+	<path d="M 90 24.25 c 0 -0.896 -0.342 -1.792 -1.025 -2.475 c -1.366 -1.367 -3.583 -1.367 -4.949 0 L 45 60.8 L 5.975 21.775 c -1.367 -1.367 -3.583 -1.367 -4.95 0 c -1.366 1.367 -1.366 3.583 0 4.95 l 41.5 41.5 c 1.366 1.367 3.583 1.367 4.949 0 l 41.5 -41.5 C 89.658 26.042 90 25.146 90 24.25 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/>
+</g>
+</svg>
+  </button>
+
+  <div id="currentPlaylistLabel">All Songs</div>
+
+  <div class="player">
+
+    <div class="player-content">
+
+
+      <div class="now-playing">
+        <div class = "cover-wrapper">
+          <img id="cover" src="images/song1.jpg" alt="Cover Art">
+        </div>
+        <img id="video-cover" src="images/song1.jpg">   
+        <div class="title-wrapper">
+          <h2 id="title">Song Title</h2>
+        </div>
+        <p id="artist">Artist</p>
+      </div>
+
+      <audio id="audio"></audio>
+      
+
+
+      <input type="range" id="seek-bar" value="0" step="0.001">
+
+      <div class="time-info">
+        <span id="current-time">0:00</span>
+        <span id="total-duration">- 0:00</span>
+      </div>
+
+      <div class="controls">
+        <button id="shuffle" title="Shuffle" aria-pressed="false" class="icon-btn" aria-label="Shuffle">
+          <!-- Shuffle SVG -->
+          <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 15L21 18M21 18L18 21M21 18H18.5689C17.6297 18 17.1601 18 16.7338 17.8705C16.3564 17.7559 16.0054 17.5681 15.7007 17.3176C15.3565 17.0348 15.096 16.644 14.575 15.8626L14.3333 15.5M18 3L21 6M21 6L18 9M21 6H18.5689C17.6297 6 17.1601 6 16.7338 6.12945C16.3564 6.24406 16.0054 6.43194 15.7007 6.68236C15.3565 6.96523 15.096 7.35597 14.575 8.13744L9.42496 15.8626C8.90398 16.644 8.64349 17.0348 8.29933 17.3176C7.99464 17.5681 7.64357 17.7559 7.2662 17.8705C6.83994 18 6.37033 18 5.43112 18H3M3 6H5.43112C6.37033 6 6.83994 6 7.2662 6.12945C7.64357 6.24406 7.99464 6.43194 8.29933 6.68236C8.64349 6.96523 8.90398 7.35597 9.42496 8.13744L9.66667 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button id="prev" title="Previous" class="icon-btn" aria-label="Previous">
+          <!-- Prev SVG -->
+          <svg fill="#ffffff" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 493.796 493.796" xml:space="preserve" stroke="#ffffff" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M355.938,200.956L81.414,12.128c-11.28-7.776-23.012-11.88-33.056-11.88c-22.052,0-36.672,18.496-36.672,48.26v397.036 c0,14.54,4.228,26.688,10.496,35.144c6.364,8.572,16.32,13.108,27.076,13.108c10.04,0,21.308-4.112,32.584-11.876l274.276-188.828 c17.632-12.152,27.3-28.508,27.296-46.076C383.414,229.456,373.594,213.1,355.938,200.956z"></path> </g> </g> <g> <g> <g> <path d="M456.446,493.672l-0.293-0.004c-0.048,0-0.095,0.004-0.143,0.004H456.446z"></path> <path d="M455.638,0L444.29,0.032c-14.86,0-27.724,12.112-27.724,26.992v439.368c0,14.896,12.652,27.124,27.532,27.124 l12.055,0.152c14.805-0.079,25.957-12.412,25.957-27.252V26.996C482.11,12.116,470.51,0,455.638,0z"></path> </g> </g> </g> </g></svg>
+        </button>
+
+        <button id="play" title="Play" class="icon-btn" aria-label="Play">
+          <!-- We'll set the inner SVG dynamically from JS, initial = Play -->
+         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM10.6935 15.8458L15.4137 13.059C16.1954 12.5974 16.1954 11.4026 15.4137 10.941L10.6935 8.15419C9.93371 7.70561 9 8.28947 9 9.21316V14.7868C9 15.7105 9.93371 16.2944 10.6935 15.8458Z" fill="#ffffff"></path> </g></svg>
+        </button>
+
+        <button id="next" title="Next" class="icon-btn" aria-label="Next">
+          <!-- Next SVG -->
+          <svg fill="#ffffff" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 493.796 493.796" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M355.938,200.956L81.414,12.128c-11.28-7.776-23.012-11.88-33.056-11.88c-22.052,0-36.672,18.496-36.672,48.26v397.036 c0,14.54,4.228,26.688,10.496,35.144c6.364,8.572,16.32,13.108,27.076,13.108c10.04,0,21.308-4.112,32.584-11.876l274.276-188.828 c17.632-12.152,27.3-28.508,27.296-46.076C383.414,229.456,373.594,213.1,355.938,200.956z"></path> </g> </g> <g> <g> <g> <path d="M456.446,493.672l-0.293-0.004c-0.048,0-0.095,0.004-0.143,0.004H456.446z"></path> <path d="M455.638,0L444.29,0.032c-14.86,0-27.724,12.112-27.724,26.992v439.368c0,14.896,12.652,27.124,27.532,27.124 l12.055,0.152c14.805-0.079,25.957-12.412,25.957-27.252V26.996C482.11,12.116,470.51,0,455.638,0z"></path> </g> </g> </g> </g></svg>
+        </button>
+
+        <button id="repeat" title="Repeat" aria-pressed="false" class="icon-btn" aria-label="Repeat">
+          <!-- Repeat SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-repeat" viewBox="0 0 16 16">
+            <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class = "secondControls">
+        <button id="queue" class="queueView">
+          <svg fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M22,4H2A1,1,0,0,0,1,5v6a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1V5A1,1,0,0,0,22,4Zm-1,6H3V6H21Zm2,5a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,15Zm0,4a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,19Z"></path></g></svg>
+        </button>
+ 
+        <button id="timer" class="setTimer">
+          <svg fill="#ffffff" height="" width="" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999" xml:space="preserve" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M340.677,275.629h-65.131v-65.131c0-10.795-8.752-19.547-19.547-19.547c-10.795,0-19.547,8.752-19.547,19.547v84.679 c0,10.795,8.752,19.547,19.547,19.547h84.678c10.795,0,19.547-8.752,19.547-19.547 C360.224,284.381,351.472,275.629,340.677,275.629z"></path> </g> </g> <g> <g> <path d="M275.544,113.701V73.559h19.547c10.795,0,19.547-8.752,19.547-19.547s-8.752-19.547-19.547-19.547h-78.188 c-10.795,0-19.547,8.752-19.547,19.547s8.752,19.547,19.547,19.547h19.546V113.7c-91.44,9.785-162.893,87.397-162.893,181.392 c0,100.599,81.843,182.443,182.441,182.443c100.598-0.001,182.441-81.844,182.442-182.441 C438.437,201.098,366.983,123.486,275.544,113.701z M255.997,438.44c-79.041,0-143.346-64.306-143.346-143.349 c0-79.041,64.305-143.346,143.346-143.346s143.346,64.306,143.347,143.349C399.343,374.135,335.039,438.439,255.997,438.44z"></path> </g> </g> <g> <g> <path d="M511.62,244.248c-13.581-68.28-52.938-127.183-110.821-165.861c-8.977-5.997-21.115-3.584-27.113,5.394 c-5.998,8.976-3.584,21.115,5.392,27.113c49.202,32.876,82.655,82.944,94.198,140.981c1.851,9.302,10.016,15.738,19.151,15.738 c1.264,0,2.546-0.124,3.833-0.379C506.849,265.127,513.725,254.836,511.62,244.248z"></path> </g> </g> <g> <g> <path d="M138.313,83.781c-5.998-8.976-18.139-11.391-27.113-5.394C53.317,117.064,13.959,175.968,0.379,244.248 c-2.106,10.588,4.771,20.879,15.359,22.985c1.287,0.255,2.57,0.379,3.834,0.379c9.135,0,17.301-6.436,19.151-15.738 c11.542-58.037,44.996-108.105,94.197-140.98C141.896,104.896,144.311,92.757,138.313,83.781z"></path> </g> </g> </g></svg>
+        </button>
+      </div>
+
+      <div class = "lyrics-section">
+        <h2 id = "lyrics-preview">Lyrics Preview</h2>
+        <p id="lyrics-content">This song has no lyrics...</p>
+
+        <button id = "open-lyrics" class = "show-lyrics">Show Lyrics</button>
+      </div>
+
+    </div>
+    
+    <div class="visualizer">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    
+    <video id="bg-video" autoplay muted loop playsinline></video>
+  <div id="video-overlay"></div>
+  <div id="background-overlay"></div>
+
+
+
+</div>
+
+<!-- FULL LYRICS SCREEN -->
+<div id="lyrics-screen">
+
+  <div class="lyrics-screen-header">
+
+    <button id="close-lyrics" aria-label="Close lyrics">
+      <svg /*how do i get this to be on the left, not right*/
+        viewBox="0 0 90 90"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M 24.25 45
+             L 60 9.25
+             C 61.366 7.883 61.366 5.667 60 4.3
+             C 58.634 2.933 56.417 2.933 55.05 4.3
+             L 14.4 44.95
+             C 13.033 46.317 13.033 48.533 14.4 49.9
+             L 55.05 90.55
+             C 56.417 91.917 58.634 91.917 60 90.55
+             C 61.366 89.183 61.366 86.967 60 85.6
+             L 24.25 49.85
+             Z"
+          transform="rotate(-90 45 45)"
+        />
+      </svg>
+    </button>
+
+    <div class="lyrics-screen-title">
+      <span id="lyrics-song-title">Lyrics</span>
+    </div>
+
+  
+
+  </div>
+
+  <div id="full-lyrics">
+    <!-- LRC lines are inserted here by JavaScript -->
+  </div>
+
+</div>
+
+<div id="timerScreen">
+  <div class="timerContent">
+    <h2>Set Sleep Timer</h2>
+    <div class="timer-input-section">
+      <input type="number" id="timerMinutes" min="1" max="180" placeholder="Minutes" />
+      <div class="timerButtons">
+        <button id="startTimer">Start Timer</button>
+        <button id="cancelTimer">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="queueScreen" class="queue-screen">
+  <div class="queue-header">
+    <h2>Queue</h2>
+    <button class="close-queue">x</button>
+  </div>
+  <div class="queue-list" id="queueList">
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"></script>
+
+</body>
+</html>
