@@ -1651,13 +1651,15 @@ const playlist = [
     title: "Bella Princesa", //235
     artist: "Alex Campos",
     src: "songs/Bella Princesa - Alex Campos.mp3",
-    cover: getMp3Art("songs/Bella Princesa - Alex Campos.mp3")
+    cover: getMp3Art("songs/Bella Princesa - Alex Campos.mp3"),
+    musicvideo: "full videos/Bella Princesa - Alex Campos.mp4",
   },
   {
     title: "No Crezcas Más", //236
     artist: "Tercer Cielo",
     src: "songs/SpotiDownloader.com - No Crezcas Más - Tercer Cielo.mp3",
-    cover: getMp3Art("songs/SpotiDownloader.com - No Crezcas Más - Tercer Cielo.mp3")
+    cover: getMp3Art("songs/SpotiDownloader.com - No Crezcas Más - Tercer Cielo.mp3"),
+    musicvideo: "full videos/No Crezcas Mas - Tercer Cielo.mp4",
   },/*
   {
     title: "", //3##
@@ -3438,6 +3440,7 @@ const bgVideo = document.getElementById('bg-video');
 const videoOverlay = document.getElementById('video-overlay');
 const bgOverlay = document.getElementById('background-overlay');
 const nowPlayingCover = document.getElementById('cover');
+const nowPlayingImg = document.getElementById('cover');
 
 updateCoverSize();
 
@@ -3488,6 +3491,54 @@ if (song.video && !IS_DESKTOP) {
   // stop visualizer
   visualizer.classList.remove('active');
   stopVisualizer();
+} else if (song.musicvideo && IS_DESKTOP) {
+  // show music video
+  bgVideo.src = song.musicvideo;
+  bgVideo.muted = true;   // allow autoplay
+  bgVideo.loop = true;    // optional
+  bgVideo.style.display = 'block';
+  videoOverlay.style.background = 'linear-gradient(to bottom, #00000026, #000000a5 80%, #121212)'; 
+  bgOverlay.style.background = 'linear-gradient(to bottom, #121212, #121212 20%)';
+  nowPlayingImg.style.marginBottom = '10vh';
+
+  bgVideo.onloadedmetadata = () => {
+    const videoWidth = bgVideo.videoWidth;
+    const videoHeight = bgVideo.videoHeight;
+
+    if (videoWidth && videoHeight) {
+        const ratio = videoWidth / videoHeight;
+
+        if (videoWidth < window.innerWidth) {
+            bgVideo.style.width = window.innerWidth + 'px';
+            bgVideo.style.height = (window.innerWidth / ratio) + 'px';
+        } else {
+            bgVideo.style.width = "100%";
+            bgVideo.style.height = "100%";
+        }
+    }
+  };
+
+  bgVideo.load();
+  bgVideo.play().catch(() => {});
+
+  visualizer.style.opacity = visualizerVisible ? '0' : '0';
+
+  requestAnimationFrame(() => bgVideo.classList.add('show'));
+
+  seekBar.style.opacity = 1;
+
+  // fade out cover
+  //nowPlayingCover.style.transition = 'opacity 0.5s ease';
+  nowPlayingCover.style.opacity = '0';
+
+  videoCover.style.opacity = '1';
+  titleWrapper.classList.add('move-left');
+  artist.classList.add('move-left');
+  updateTitleScrollVideo();
+
+  // stop visualizer
+  visualizer.classList.remove('active');
+  stopVisualizer();
 } else {
   updateTitleScroll();
   videoCover.style.opacity = '0';
@@ -3498,6 +3549,12 @@ if (song.video && !IS_DESKTOP) {
   setTimeout(() => bgVideo.style.display = 'none', 500);
   videoOverlay.style.background = 'linear-gradient(to bottom,#0000003a 1%, #0000006a 78%, #000000ba)';
   bgOverlay.style.background = 'linear-gradient(to bottom, #000000ba, #121212 32%)';
+  
+  if(IS_DESKTOP) {
+    nowPlayingImg.style.marginBottom = '0rem';
+  } else {
+    nowPlayingImg.style.marginBottom = '1.5rem';
+  }
 
   seekBar.style.opacity = 1;
 
