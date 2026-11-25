@@ -1473,7 +1473,7 @@ const playlist = [
     artist: "Jesús Adrián Romero",
     src: "songs/SpotiDownloader.com - De Tal Manera - Jesús Adrián Romero.mp3",
     cover: getMp3Art("songs/SpotiDownloader.com - De Tal Manera - Jesús Adrián Romero.mp3"),
-  },
+  },,,,,
   {
     title: "Clamaré", //209
     artist: "Francisco Orantes, Veronica Leal",
@@ -1518,7 +1518,7 @@ const playlist = [
     src: "songs/SpotiDownloader.com - Vale La Pena - Mike Muñoz.mp3",
     cover: getMp3Art("songs/SpotiDownloader.com - Vale La Pena - Mike Muñoz.mp3"),
     video: "videos/EvanCraft3.mp4",
-  },
+  },,,,,,,,,,,,,,,
   {
     title: "Agradecido", //216
     artist: "Oasis Ministry, Madiel Lara",
@@ -1526,7 +1526,7 @@ const playlist = [
     cover: getMp3Art("songs/SpotiDownloader.com - Agradecido - Oasis Ministry.mp3"),
     video: "videos/Oasis1.mp4",
     lrc: "LRC files/Agradecido - Oasis Ministry, Madiel Lara.lrc",
-  },
+  },,
   {
     title: "Bye Bye", //217
     artist: "Musiko, Pedro Pablo Quintero, FLEIVA MUSIC",
@@ -1580,7 +1580,7 @@ const playlist = [
     cover: getMp3Art("songs/SpotiDownloader.com - mi DIOS - Madiel Lara.mp3"),
     video: "videos/MadielLara11.mp4",
     lrc : "LRC files/mi DIOS - Madiel Lara.lrc",
-  },
+  },,
   {
     title: "Soy Peregrino", //224
     artist: "Anita Morán",
@@ -1598,7 +1598,7 @@ const playlist = [
     artist: "Anita Morán",
     src: "songs/NOS VEREMOS EN LA GLORIA - Anita Morán (VIDEO OFICIAL) - Anita Morán.mp3",
     cover: getMp3Art("songs/NOS VEREMOS EN LA GLORIA - Anita Morán (VIDEO OFICIAL) - Anita Morán.mp3"),
-  },
+  },,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
   {
     title: "Espíritu De Dios", //227
     artist: "Leonel Tuchez",
@@ -1648,14 +1648,14 @@ const playlist = [
     cover: getMp3Art("songs/No Tardes - Anita Moran.mp3")
   },
   {
-    title: "Bella Princesa", //235
+    title: "Bella Princesa", //316
     artist: "Alex Campos",
     src: "songs/Bella Princesa - Alex Campos.mp3",
     cover: getMp3Art("songs/Bella Princesa - Alex Campos.mp3"),
     musicvideo: "full videos/Bella Princesa - Alex Campos.mp4",
   },
   {
-    title: "No Crezcas Más", //236
+    title: "No Crezcas Más", //317
     artist: "Tercer Cielo",
     src: "songs/SpotiDownloader.com - No Crezcas Más - Tercer Cielo.mp3",
     cover: getMp3Art("songs/SpotiDownloader.com - No Crezcas Más - Tercer Cielo.mp3"),
@@ -1673,7 +1673,7 @@ const playlist = [
 
 const playlistOrder = {
   LikedSongs: [193, 187, 183, 180, 179, 172, 173, 172, 171, 169, 170, 157, 158, 146, 134, 129, 7, 6, 9, 30, 5, 12, 29, 2, 16, 76, 23, 20, 123, 124, 101, 12, 114, 115, 19, 98, 103, 96, 76, 101, 135, 100],
-  Quinceanera: [235, 236],
+  Quinceanera: [316, 317],
   Worship: [313, 314, 315, 312, 311, 308, 309, 310, 244, 245, 246, 96, 216, 215, 213, 214, 206, 207, 208, 193, 203, 202, 201, 200, 199, 198, 197, 196, 195, 194, 62, 53, 145, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 154, 59, 56, 14, 51, 66, 89, 15, 111, 110, 136, 144, 137, 138, 139, 155, 134, 112, 133, 16, 123, 143, 142, 141, 140, 84, 2, 7, 3, 4, 8, 9, 72, 116, 117, 118, 119, 120, 121, 10, 17, 18, 19, 20, 1, 0, 12, 23, 24, 26, 27, 28, 29, 30, 32, 33, 34, 35, 37, 38, 40, 41, 44, 46, 49, 50, 54, 55, 57, 61, 63, 70, 71, 73, 74, 81, 85, 86],
   Voceros: [110, 123, 5, 172, 179, 180, 171, 134, 6, 7, 124, 136, 143, 144, 142, 141, 140, 137, 138, 139, 155, 125, 126, 127, 128, 8, 10, 14, 19, 20, 21, 11, 22, 23, 29, 12, 30, 31, 48, 64, 13, 65, 75],
   MUSIKO: [237, 238, 239, 240, 242, 236, 234, 219, 92, 218, 217, 216, 207, 78, 204, 193, 169, 170, 146, 113, 101, 136, 143, 142, 137, 138, 139, 130, 145, 174, 102, 103, 106, 107, 96, 114, 115, 97, 98, 90, 77, 79, 5, 6, 122, 131, 132, 173, 147, 104, 184, 185, 186],
