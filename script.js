@@ -1767,7 +1767,7 @@ const playlist = [
     artist: "Seeiji, Vaes",
     src: "songs/SpotiDownloader.com - HAY UN DIOS - REMIX - Seeiji.mp3",
     cover: getMp3Art("songs/SpotiDownloader.com - HAY UN DIOS - REMIX - Seeiji.mp3"),
-    video: "videos/Seeiji1.mp4",
+    video: "videos/Seeji1.mp4",
   },
   {
     title: "Fuerzas Pa'", //333
